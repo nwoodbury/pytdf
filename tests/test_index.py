@@ -25,6 +25,9 @@ class TestView(object):
         response = inst.index()
         assert 'Hello World' == response['body']
 
+    def test_fail(self):
+        assert False
+
 
 class TestFunctional(object):
     """

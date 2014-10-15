@@ -2,6 +2,12 @@ language: python
 python:
     - "3.3"
 # Command to install dependencies
+before-install:
+    - sudo apt-get install python-software-properties python g++ make
+    - sudo add-apt-repository ppa:chris-lea/node.js -y
+    - sudo apt-get update -q
+    - sudo apt-get install nodejs
+    - sudo npm install -gy bower
 install: python setup.py develop
 # Command to run tests
 script: python setup.py test

@@ -88,7 +88,10 @@ development_requires = [
 ]
 requires += development_requires
 
-setup(name='TDF',
+setup(name='pytdf',
+      version='0.0.1',
+      packages=['tdf'],
+      include_package_data=True,
       install_requires=requires,
       tests_require=tests_requires,
       cmdclass={

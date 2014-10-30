@@ -10,6 +10,7 @@ before-install:
     - sudo npm install -gy bower
 install:
     - python setup.py develop
+    - pip install coveralls
 # Command to run tests
 script:
     - python setup.py test

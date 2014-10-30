@@ -1,0 +1,8 @@
+[report]
+omit =
+    env34/*
+    *.egg/*
+    tests/*
+    tdf/public/css/*
+    tdf/public/docs/*
+    tdf/public/lib/*

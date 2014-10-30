@@ -79,7 +79,9 @@ requires = [
 
 tests_requires = [
     'pytest',
-    'webtest'
+    'webtest',
+    'coveralls',
+    'python-coveralls'
 ]
 
 # TODO figure out how to ignore if not in development mode

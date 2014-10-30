@@ -2,6 +2,7 @@ The Tour de Finance (pytdf)
 ===========================
 
 [![Build Status](https://img.shields.io/travis/nwoodbury/pytdf.svg?style=flat)](https://travis-ci.org/nwoodbury/pytdf)
+[![Coverage Status](https://img.shields.io/coveralls/nwoodbury/pytdf.svg)](https://coveralls.io/r/nwoodbury/pytdf?branch=master)
 
 The Tour de Finance (Version 2 with a Python Engine)
 

@@ -3,3 +3,4 @@ env34/
 .bower-*
 tdf/public/lib/
 tdf/public/docs/build/
+.coverage

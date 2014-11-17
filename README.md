@@ -3,7 +3,7 @@ The Tour de Finance (pytdf)
 
 [![Build Status](https://img.shields.io/travis/nwoodbury/pytdf.svg)](https://travis-ci.org/nwoodbury/pytdf)
 [![Coverage Status](https://img.shields.io/coveralls/nwoodbury/pytdf.svg)](https://coveralls.io/r/nwoodbury/pytdf?branch=master)
-[![Dependency Status](https://www.versioneye.com/user/projects/546a4427a760cea108000040/badge.svg?style=flat)](https://www.versioneye.com/user/projects/546a4427a760cea108000040)
+[![Dependency Status](https://www.versioneye.com/user/projects/546a4427a760cea108000040/badge.svg)](https://www.versioneye.com/user/projects/546a4427a760cea108000040)
 
 The Tour de Finance (Version 2 with a Python Engine)
 

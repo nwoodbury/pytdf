@@ -4,26 +4,12 @@ from setuptools.command.install import install as InstallCommand
 from setuptools.command.develop import develop as DevelopCommand
 import sys
 import os
-import json
 from subprocess import call
 
 
 def _bower_install():
     print('\n\n-- Installing Client Dependencies (Bower) --\n\n')
-
-    with open('clientdependencies.json', 'r') as f:
-        client_dependencies = json.load(f)
-        dependencies = {dependency: details['version'] for dependency, details
-                        in client_dependencies.items()}
-        bower = {
-            'name': 'tdf',
-            'dependencies': dependencies
-        }
-        with open('bower.json', 'w') as bower_json:
-            json.dump(bower, bower_json)
-        os.system('bower install')
-        os.remove('bower.json')
-
+    os.system('bower install')
     print('\n\n-- Client Dependencies Installed --\n\n')
 
 

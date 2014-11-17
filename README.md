@@ -82,3 +82,55 @@ Generate the documentation with:
     $VPYTHON setup.py document
 
 The built HTML of the documentation is now available at `public/docs/build/html/`.
+
+Development Notes
+-----------------
+
+The following are notes for the aid of TDF developers only, managers of TDF
+servers should not require this information.
+
+### Registering New Client-Side Dependencies ###
+
+Client-side dependencies are managed and installed using
+[Bower](http://bower.io/). To load and register a new client-side dependency
+for use in TDF:
+
+1. Update `bower.json` (in the TDF root directory) with the package name and
+version. Avoid using approximate or autodetected versions where possible, this
+can lead to broken builds in the future. See the
+[Bower Configuration Docs](http://bower.io/docs/config/) for more information
+on how to configure the `bower.json` folder.
+
+2. Install the new dependencies by running
+
+        $VPYTHON setup.py develop
+
+3. Inform TDF where the relevant `css` and `js` files in the dependency package
+reside by editing `dependency_autoload.json`. The keys of the json object are
+the package names, and should correspond to the dependency name loaded in
+`bower.json`. The values are nested json objects which should contain at least
+one (and possibly both) of the following two keys:
+
+        * `js`: A json array, where each item is the location of a `.js` file,
+          relative to the dependency root, to load into the TDF page.
+
+        * 'css': A json array, where each item is the location of a `.css`
+          file, relative to the dependency root, to load into the TDF page.
+
+For example, consider the following entry in the `dependency_autoload.json`
+file:
+
+        "bootstrap": {
+            "js": [
+                "dist/js/bootstrap.min.js"
+            ],
+            "css": [
+                "dist/css/bootrstrap.min.css"
+            ]
+        }
+
+With this object, TDF now recognizes the [bootstrap](http://getbootstrap.com/),
+dependency, which is installed by `setup.py` into `tdf/public/lib/bootstrap/`.
+The js file `tdf/public/lib/bootstrap/dist/js/bootstrap.min.js` and the css
+file `tdf/public/lib/bootstrap/dist/css/bootstrap.min.css` are then loaded into
+the TDF page for use by the TDF client.

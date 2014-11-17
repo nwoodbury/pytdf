@@ -49,7 +49,7 @@ class BaseView:
             The json from clientdependencies.json described above parsed
             into a python dictionary.
         """
-        with open('clientdependencies.json', 'r') as f:
+        with open('dependency_autoload.json', 'r') as f:
             return json.load(f).items()
 
     @property

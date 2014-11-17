@@ -56,30 +56,21 @@ class PyDoc(Command):
         call(['make', 'html'])
         os.chdir(cwd)
 
-requires = [
-    'pyramid',
-    'pyramid_chameleon',
-    'sqlalchemy',
-    'pymysql',
-]
-
-tests_requires = [
-    'pytest',
-    'webtest',
-]
-
-# TODO figure out how to ignore if not in development mode
-development_requires = [
-    'pyramid_debugtoolbar'
-]
-requires += development_requires
-
 setup(name='pytdf',
       version='0.0.1',
       packages=['tdf'],
       include_package_data=True,
-      install_requires=requires,
-      tests_require=tests_requires,
+      install_requires=[
+          'pyramid',
+          'pyramid_chameleon',
+          'sqlalchemy',
+          'pymysql',
+          'pyramid_debugtoolbar'
+      ],
+      tests_require=[
+          'pytest',
+          'webtest'
+      ],
       cmdclass={
           'install': Install,
           'develop': Develop,
